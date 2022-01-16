@@ -24,7 +24,7 @@ Write an algorithm that:
   - If it is a multiple of 3 and 5 it is replaced by the word "FizzBuzz".
   
   **Example:** 
-  - Output: [1,2,Fizz,4,Buzz,6,7,8,9,10,11,12,13,14,FizzBuzz,16,...]
+  - Output: [1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz,16,...]
 
 
 ### 2. Positive values with their negative equivalent
