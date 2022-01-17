@@ -106,7 +106,7 @@ describe('anagram()', () => {
         expect(anagram("Licúa", array)).toEqual(["Lucía"]);
     });
 
-    it('run anagram with array 7', () => {
+    it('run anagram with array xyz', () => {
         const array = ["conversadora"]
         expect(anagram("Conservadora", array)).toEqual(["conversadora"]);
     });
