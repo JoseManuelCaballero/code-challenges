@@ -1,4 +1,4 @@
-/* Code Challenge. Anagram
+/*  Code Challenge. Anagram
 
 Given an array of words, we need to write a function which will take two parameters.
     - First parameter is a word and the second parameter is the array of the words.
