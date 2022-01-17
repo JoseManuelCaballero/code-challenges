@@ -1,18 +1,10 @@
 # Code Challenges
-This project contains some exercises to practice algorithms in javascript
+This project contains some exercises to practice algorithms in javascript.
 
 ## Installation
-1. Clone the repository locally.
-  - Open the repository page.
-  - Click on the **Code** button.
-  - To clone the repository using HTTPS, click on HTTPS and copy the url https://github.com/...
-  - Open Git Bash.
-  - Change the current directory to the location where you want to clone the project.
-  - Type **git clone**, and then paste the URL that you copied before.
-  
-    - $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-    
-  - Press enter for create your local clone.
+1. Clone the repository locally.  
+2. Run the command npm install.
+3. Run the command npm run test.
 
 ## Exercises
 
@@ -34,6 +26,7 @@ Write a function that, given an array of "n" numbers:
   **Example:**
   - Input: [-1, -2, -3] => Output: []
   - Input: [-3, -2, -1, -4, 3, 2, 1, 5] => Output: [1, 2, 3]
+
 
 ### 3. Minimal difference between groups
 Given an array of n consecutive numbers. For example:[1, 2, 3, 4, 5, 6]
@@ -72,6 +65,7 @@ Given a string of length 'N' made up of only letters 'a' and 'b', write a functi
   - combination 5: ba | ba | a - Valid
   - combination 6: bab | a | a - Valid
 
+
 ### 5. Shortest Balanced Fragment
 Write a function that, given a string S of length N: 
 - Returns the length of the shortest balanced fragment of S. 
@@ -87,19 +81,20 @@ Write a function that, given a string S of length N:
 - Input: "AcZCbaBz" => Output: 8. The shortest balanced fragment is the whole string.
 - Input: "abcdefghijklmnopqrstuvwxyz" => Output: -1. There is no balanced fragment.
 
+
 ### 6. Anagram
 Given an array of words, we need to write a function which will take two parameters. 
 - First parameter is a word and the second parameter is the array of the words. 
 - The function will return an array consisting of the anagrams of the word passed as the first parameter from the array of words passed as the second parameter.
 
 **Examples:**
-- Input: ["Ave","Eva","Va","Vea"] => Output: ["Eva","Vea"];        
-- Input: ["Alegan","Ángela","galena"] => Output: ["Ángela","Galena"];
-- Input: ["Riesgo","Sergio","Regio"] => Output: ["Sergio"];
-- Input: ["Agranda","granada","nada"] => Output: ["granada"];
-- Input: ["Desamparador","rama","desparramado"] => Output: ["desparramado"];
-- Input: ["Licúa","Lucía","Lucí"] => Output: ["Lucía"];
-- Input: ["Conservadora","conversadora"] => Output: ["conversadora"];
+- Input: "Ave",["Eva","Va","Vea"] => Output: ["Eva","Vea"];        
+- Input: "Alegan",["Ángela","Galena"] => Output: ["Ángela","Galena"];
+- Input: "Riesgo",["Sergio","Regio"] => Output: ["Sergio"];
+- Input: "Agranda",["granada","nada"] => Output: ["granada"];
+- Input: "Desamparador",["rama","desparramado"] => Output: ["desparramado"];
+- Input: "Licúa",["Lucía","Lucí"] => Output: ["Lucía"];
+- Input: "Conservadora",["conversadora"] => Output: ["conversadora"];
         
 ### 7. Is balanced Parenthesis
 Write a function or program that checks if a string is a balanced parenthesis.
