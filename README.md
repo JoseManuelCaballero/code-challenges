@@ -6,6 +6,9 @@ This project contains some exercises to practice algorithms in javascript.
 > 2. Run the command npm install.
 > 3. Run the command npm run test.
 
+## How to use?
+It doesn't resolve to the main branch, create another branch first. For example: JCaballero-Solved
+
 ## Exercises
 
 ### 1. FizzBuzz
