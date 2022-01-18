@@ -1,25 +1,73 @@
 const balancedParenthesis = require('../src/balancedParenthesis');
 
-test('run balancedParenthesis with correct string', () => {  
-    expect(balancedParenthesis("[{()}]")).toEqual(true);
-});
+describe('balancedParenthesis()', () => {
+    it('when you do not provide a string, it should return false', () =>{
+        expect(balancedParenthesis(null)).toEqual(false);
+    });
 
-test('run balancedParenthesis with correct string 2', () => {  
-    expect(balancedParenthesis("{([])}")).toEqual(true);
-});
+    it('when you provide a string empty, it should return true', () =>{
+        expect(balancedParenthesis("")).toEqual(true);
+    });
 
-test('run balancedParenthesis with correct string 3', () => {    
-    expect(balancedParenthesis("([{}])")).toEqual(true);  
-});
+    it('when you provide a string with no parentheses, no braces, and no brackets, it should return true', () =>{
+        expect(balancedParenthesis("hola mundo")).toEqual(true);
+    });
+    
+    it('when you provide a string with only one open brace, it should return false', () =>{
+        expect(balancedParenthesis("{")).toEqual(false);
+    });
 
-test('run balancedParenthesis with correct string 4', () => {    
-    expect(balancedParenthesis("[{}]")).toEqual(true);  
-});
+    it('when you provide a string with only one open parenthesis, it should return false', () =>{
+        expect(balancedParenthesis("(")).toEqual(false);
+    });
+    
+    it('when you provide a string with only one open brackets, it should return false', () =>{
+        expect(balancedParenthesis("[")).toEqual(false);
+    });
 
-test('run balancedParenthesis with incorrect string', () => {    
-    expect(balancedParenthesis("([{]})")).toEqual(false);  
-});
+    it('when you provide a string with open and closed braces correctly, it should return true', () =>{
+        expect(balancedParenthesis("{}")).toEqual(true);
+    });    
 
-test('run balancedParenthesis with incorrect string 2', () => {    
-    expect(balancedParenthesis("{[})")).toEqual(false);  
-});
+    it('when you provide a string with open and closed parenthesis correctly, it should return true', () =>{
+        expect(balancedParenthesis("()")).toEqual(true);
+    });    
+
+    it('when you provide a string with open and closed brackets correctly, it should return true', () =>{
+        expect(balancedParenthesis("[]")).toEqual(true);
+    });    
+
+    it('when you provide a string with open and closed brackets correctly and with open and closed braces correctly, it should return true', () => {    
+        expect(balancedParenthesis("[{}]")).toEqual(true);  
+    });    
+
+    it('when you provide a string with open and closed brackets correclty and with open and closed parenthesis correctly, it should return true', () => {    
+        expect(balancedParenthesis("[()]")).toEqual(true);  
+    });
+
+    it('when you provide a string with open and closed braces correctly and with open and closed parenthesis correctly, it should return true', () => {    
+        expect(balancedParenthesis("{()}")).toEqual(true);  
+    });
+    
+    it('when you provide a string with open and closed brackets correctly, with open and closed braces correctly and with open and closed parenthesis correctly, it should return true', () => {    
+        expect(balancedParenthesis("[{()}]")).toEqual(true);
+    });
+    
+    it('when you provide a string with open and closed braces correctly, with open and closed parenthesis correctly and with open and closed brackets correctly, it should return true', () => {  
+        expect(balancedParenthesis("{([])}")).toEqual(true);
+    });
+    
+    it('when you provide a string with open and closed parenthesis correctly, with open and closed brackets correctly and with open and closed braces correctly, it should return true', () => {  
+        expect(balancedParenthesis("([{}])")).toEqual(true);  
+    });        
+    
+    it('when you provide a string with open and closed parenthesis correctly, with open and closed brackets incorrectly and with open and closed braces incorrectly, it should return false', () => {
+        expect(balancedParenthesis("([{]})")).toEqual(false);  
+    });
+    
+    it('when you provide a string with open and closed braces incorrectly, with only open bracket and with only closed parenthesis, it should return false', () => {    
+        expect(balancedParenthesis("{[})")).toEqual(false);  
+    });
+    
+})
+
