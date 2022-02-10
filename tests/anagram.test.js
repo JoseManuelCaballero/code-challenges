@@ -1,7 +1,7 @@
 const anagram = require('../src/anagram');
 
 describe('anagram()', () => {
-    it('when no words are provided there is not any anagram', () => {
+    it('when words is empty then it not returns any anagram.', () => {
         // input
         const word = "any"
         const words = []
@@ -14,7 +14,7 @@ describe('anagram()', () => {
 
     })
 
-    it('when empty word is provided no anagrams are returned', () => {
+    it('when words contains an string empty then it not returns any anagram.', () => {
         // input
         const word = "any"
         const words = [""]
@@ -27,7 +27,7 @@ describe('anagram()', () => {
 
     })
 
-    it('when words contain the word should return as anagram', () => {
+    it('when words contains the same word then it returns this word as anagram', () => {
         // input
         const word = "ave"
         const words = ["ave"]
@@ -40,7 +40,7 @@ describe('anagram()', () => {
 
     })
 
-    it('when words contain an anagram should return this word as anagram', () => {
+    it('when words contains an anagram then it returns this word as anagram', () => {
         // input
         const word = "ave"
         const words = ["eva"]
@@ -53,7 +53,7 @@ describe('anagram()', () => {
 
     })
 
-    it('when words no contain an anagram should return there is not any anagram', () => {
+    it('when words no contains an anagram then it should return there is not any anagram', () => {
         // input
         const word = "ave"
         const words = ["fea"]
