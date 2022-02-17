@@ -15,8 +15,49 @@ Examples:
     Input: "abcdefghijklmnopqrstuvwxyz" => Output: -1. There is no balanced fragment.
 */
 
-function shortestBalancedFragment(string){
+function shortestBalancedFragment(string) {
+  const lower = /^[a-z0-9 ]+$/;
+  const upper = /^[A-Z0-9 ]+$/;
+
+  const haveOnlyLower = lower.test(string);
+  const haveOnlyUpper = upper.test(string);
+  const haveOnlyOneCharacter = string.Length === 1;
+  const stringIsEmpty = string === "";
+
+  if (stringIsEmpty || haveOnlyOneCharacter || haveOnlyLower || haveOnlyUpper) {
     return -1;
+  }
+
+  const fragments = getFragments(string);
+
+  const noHaveFragments = fragments.length === 0;
+  if (noHaveFragments) {
+    return -1;
+  }
+
+  return Math.min(...fragments);
+}
+
+function getFragments(string) {
+  let fragments = [""];
+  const letters = string.split("");
+
+  letters.forEach((letter) => {
+    const countLower = (string.match(letter.toLowerCase()) ?? []).length;
+    const countUpper = (string.match(letter.toUpperCase()) ?? []).length;
+    const haveLowerAndUpper = countLower > 0 && countUpper > 0;
+
+    if (haveLowerAndUpper) {
+      fragments[fragments.length - 1] += letter;
+      return;
+    }
+
+    fragments.push("");
+  });
+
+  return fragments
+    .filter((fragment) => fragment.length > 1)
+    .map((fragment) => fragment.length);
 }
 
 module.exports = shortestBalancedFragment;
