@@ -14,8 +14,37 @@ Examples:
         Input: "Conservadora",["conversadora"] => Output: ["conversadora"];
 */
 
-function anagram(word,words){
-    return [];
+function anagram(word, words) {
+  let output = [];
+
+  words.forEach((string) => {
+    const stringsAreEmpty = word.length === 0 || string.length === 0;
+    const stringsSizeAreDifferent = word.length !== string.length;
+    const wordToLower = word.toLowerCase();
+    const stingToLower = string.toLowerCase();
+    const letters = stingToLower.split("");
+
+    if (stringsAreEmpty || stringsSizeAreDifferent) {
+      return;
+    }
+
+    for (let i = 0; i < letters.length - 1; i++) {
+      const lettersInWord = wordToLower.match(letters[i]) ?? [];
+      const lettersInString = stingToLower.match(letters[i]) ?? [];
+      const haveSameSizeLetters =
+        lettersInWord.length !== lettersInString.length;
+
+      if (haveSameSizeLetters) {
+        break;
+      }
+
+      if (!output.includes(string)) {
+        output.push(string);
+      }
+    }
+  });
+
+  return output;
 }
 
 module.exports = anagram;
