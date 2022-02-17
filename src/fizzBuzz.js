@@ -11,8 +11,21 @@ Example:
     
 */
 
-function fizzBuzz(){
-    return [];
+function fizzBuzz(numbers) {
+  numbers = Array.from(numbers);
+  let output = [];
+  numbers.forEach((number) => {
+    if (number % 15 === 0) {
+      output.push("FizzBuzz");
+    } else if (number % 3 === 0) {
+      output.push("Fizz");
+    } else if (number % 5 === 0) {
+      output.push("Buzz");
+    } else {
+      output.push(number);
+    }
+  });
+  return output;
 }
 
 module.exports = fizzBuzz;
