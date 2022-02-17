@@ -10,8 +10,24 @@ Example:
 
 */
 
-function positiveWithNegative(array){
-    return [];
+function positiveWithNegative(numbers) {
+  let output = [];
+  const onlyNegatives = numbers.every((number) => number < 0);
+  const isZero = numbers.every((number) => number === 0);
+  const onlyPositives = numbers.every((number) => number > 0);
+  numbers.forEach((number) => {
+    if (onlyNegatives || isZero || onlyPositives) {
+      return;
+    }
+
+    if (number < 0) {
+      if (numbers.includes(Math.abs(number))) {
+        output.push(Math.abs(number));
+      }
+    }
+  });
+
+  return output.sort();
 }
 
 module.exports = positiveWithNegative;
