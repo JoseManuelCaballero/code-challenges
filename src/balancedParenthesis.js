@@ -11,8 +11,39 @@ Examples:
     Input: "([{]})" => Output: false
     Input: "{[})" => Output: false
 */
-function balancedParenthesis(string){
+function balancedParenthesis(string) {
+  if (string === "") {
+    return true;
+  }
+  if (string === null) {
     return false;
+  }
+  let characters = string.split("");
+  let pile = [];
+
+  characters.forEach((character) => {
+    const haveOpen =
+      character === "[" || character === "{" || character === "(";
+    if (haveOpen) {
+      pile.push(character);
+    }
+    if (character === "]" && characters[pile.length - 1] === "[") {
+      pile.pop();
+    }
+
+    if (character === "}" && characters[pile.length - 1] === "{") {
+      pile.pop();
+    }
+
+    if (character === ")" && characters[pile.length - 1] === "(") {
+      pile.pop();
+    }
+  });
+
+  if (pile.length === 0) {
+    return true;
+  }
+  return false;
 }
 
 module.exports = balancedParenthesis;
