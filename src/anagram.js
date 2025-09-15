@@ -14,8 +14,20 @@ Examples:
         Input: ["Conservadora","conversadora"] => Output: ["conversadora"];
 */
 
-function anagram(array){
-    return [];
+function anagram(word, words) {
+    const normalizedWord = normalize(word)
+    return words.filter(w => normalizedWord === normalize(w))
 }
+
+const normalize = str =>
+    str
+        .toLowerCase()
+        .replace(/[^a-z0-9]/gi, '')
+        .split('')
+        .sort()
+        .join('');
+
+
+
 
 module.exports = anagram;
